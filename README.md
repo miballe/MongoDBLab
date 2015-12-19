@@ -16,4 +16,4 @@ This folder contains the files that partially worked with some queries.
 This folder was expected to contain a simple HTML page with a JS script that triggered requests to the published queries.
 
 ## Data folder
-Was intended to contain the clean and raw datasets. The dataset is in MongoDB since the CSV was too big for GitHub. Even a ZIP was too big.
+Was intended to contain the clean and raw datasets. The dataset is in MongoDB since the CSV was too big for GitHub. Even a ZIP was too big. It contains the data cleaning steps instead in a single PDF file.
