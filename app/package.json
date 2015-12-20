@@ -1,0 +1,10 @@
+{
+    "name": "microblogging",
+    "description": "MongoDB coursework microblogging dataset",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "express": "3.x",
+        "mongodb": "1.4.*"
+    }
+}

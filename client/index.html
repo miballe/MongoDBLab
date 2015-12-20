@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MongoDB Coursework - mabm1e15</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+
+<table width="1024" align="center" border="0" class="table1">
+	<tr>
+		<th colspan="2">MongoDB Coursework - Queries</th>
+	</tr>
+	<tr>
+		<td>Number of unique users</td>
+		<td id="tdQry1"><img src="wait.gif" width="20" height="20"></td>
+	</tr>
+	<tr>
+		<td>Top 10 users</td>
+		<td id="tdQry2"><img src="redx.png" width="20" height="20"></td>
+	</tr>
+	<tr>
+		<td>Earliest and latest date</td>
+		<td id="tdQry3"><img src="wait.gif" width="20" height="20"></td>
+	</tr>
+	<tr>
+		<td>Mean time delta</td>
+		<td id="tdQry4"><img src="redx.png" width="20" height="20"></td>
+	</tr>
+	<tr>
+		<td>Mean length message</td>
+		<td id="tdQry5"><img src="redx.png" width="20" height="20"></td>
+	</tr>
+	<tr>
+		<td>10 most common Unigram and bigram strings</td>
+		<td id="tdQry6"><img src="redx.png" width="20" height="20"></td>
+	</tr>
+	<tr>
+		<td>Average number hashtag used</td>
+		<td id="tdQry7"><img src="redx.png" width="20" height="20"></td>
+	</tr>
+	<tr>
+		<td>UK area largest published msg</td>
+		<td id="tdQry8"><img src="redx.png" width="20" height="20"></td>
+	</tr>
+</table>
+
+<script>
+    $.ajax({
+      url: 'http://dsclabs.cloudapp.net:5454/mblog/uniqueusers/',
+      timeout: 10000,
+	  dataType: "json",
+      success: function(data) {
+        $('#tdQry1').html(data);
+      },
+      error: function(badData) {
+        $('#tdQry1').html('<img src="redx.png" width="20" height="20">');
+      },
+      type: 'GET'
+    });
+		
+    $.ajax({
+      url: 'http://dsclabs.cloudapp.net:5454/mblog/firstlastmsg/',
+      timeout: 20000,
+	  dataType: "json",
+      success: function(data) {
+        $('#tdQry3').html('Earliest: ' + data[0].min + '<br>Latest: ' + data[0].max);
+      },
+      error: function(badData) {
+        $('#tdQry3').html('<img src="redx.png" width="20" height="20">');
+      },
+      type: 'GET'
+    });
+		
+	
+
+</script>
+</body>
+</html>
